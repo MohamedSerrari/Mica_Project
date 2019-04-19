@@ -93,12 +93,12 @@ for R_loc=R_locs
     plot(R_loc,data_plot(R_loc),'r*'); text(R_loc,data_plot(R_loc),' R ','Color','red','FontSize',14);
 end
 
-for i=1:length(R_locs)
+for R_loc=R_locs
     % inter_pks is the distance between two peaks, it is updated everytime
     % for better precision in the code. In the case of the last PQRST
     % complex, inter_pks is not updated and the last value is kept.
     
-    if (i < length(R_locs)) % checking is it's the last complex in the signal
+    if (i < max(R_locs)) % checking is it's the last complex in the signal
         inter_pks = floor((R_locs(i+1) - R_locs(i))/2);
     end
 
